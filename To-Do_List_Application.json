@@ -1,0 +1,123 @@
+{
+  "info": {
+    "_postman_id": "a253c8cb-8c78-41f7-9747-58f1843378b9",
+    "name": "To-Do List",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14138437"
+  },
+  "item": [
+    {
+      "name": "Task",
+      "item": [
+        {
+          "name": "create task",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Task Title\",\n    \"description\": \"Task description\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"assignedTo\": \"John Doe\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/tasks",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          }
+        },
+        {
+          "name": "fetch all tasks",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{URL}}/api/tasks",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          }
+        },
+        {
+          "name": "fetch task by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{URL}}/api/tasks/1",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "update task",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Updated Task Title\",\n    \"description\": \"Updated description\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"assignedTo\": \"Jane Doe\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/tasks/1",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "delete task",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{URL}}/api/tasks/1",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "URL",
+      "value": "http://localhost:4000",
+      "type": "string"
+    }
+  ]
+}
