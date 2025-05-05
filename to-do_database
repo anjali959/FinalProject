@@ -1,0 +1,24 @@
+W3_87387_Anjali>use todo_db;
+Database changed
+W3_87387_Anjali>show tables;
++-------------------+
+| Tables_in_todo_db |
++-------------------+
+| tasks             |
++-------------------+
+1 row in set (0.02 sec)
+
+W3_87387_Anjali>select * from tasks;
++----+-----------------------+-------------------------+-------------+----------+------------+---------------------+
+| id | title                 | description             | status      | priority | assignedTo | createdAt           |
++----+-----------------------+-------------------------+-------------+----------+------------+---------------------+
+|  1 | Updated Task Title    | Updated description 1   | completed   | high     | Jane Doe   | 2025-05-01 00:00:00 |
+|  5 | Bug Fixing            | Fix login bug           | in-progress | high     | User 1     | 2025-05-04 19:32:09 |
+|  6 | UI Design             | Design dashboard layout | pending     | low      | User 2     | 2025-05-04 19:32:09 |
+|  7 | Testing               | Test payment module     | completed   | medium   | User 3     | 2025-05-04 19:32:09 |
+|  8 | Task Title            | Task description        | pending     | medium   | John Doe   | 2025-05-04 23:25:42 |
+|  9 | Property Selling Site | yes                     | pending     | medium   | Me         | 2025-05-04 00:00:00 |
++----+-----------------------+-------------------------+-------------+----------+------------+---------------------+
+6 rows in set (0.00 sec)
+
+W3_87387_Anjali>
