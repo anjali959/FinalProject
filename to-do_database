@@ -21,4 +21,31 @@ W3_87387_Anjali>select * from tasks;
 +----+-----------------------+-------------------------+-------------+----------+------------+---------------------+
 6 rows in set (0.00 sec)
 
-W3_87387_Anjali>
+********************************************************************************************************************
+
+-- Step 1: Create the database
+CREATE DATABASE IF NOT EXISTS todo_db;
+
+-- Step 2: Use the database
+USE todo_db;
+
+-- Step 3: Create the tasks table
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    status ENUM('pending', 'in-progress', 'completed') DEFAULT 'pending',
+    priority ENUM('low', 'medium', 'high') DEFAULT 'medium',
+    assignedTo VARCHAR(100),
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Step 4: Insert sample data
+INSERT INTO tasks (title, description, status, priority, assignedTo, createdAt)
+VALUES 
+('Updated Task Title', 'Updated description 1', 'completed', 'high', 'Jane Doe', '2025-05-01 00:00:00'),
+('Bug Fixing', 'Fix login bug', 'in-progress', 'high', 'User 1', '2025-05-04 19:32:09'),
+('UI Design', 'Design dashboard layout', 'pending', 'low', 'User 2', '2025-05-04 19:32:09'),
+('Testing', 'Test payment module', 'completed', 'medium', 'User 3', '2025-05-04 19:32:09'),
+('Task Title', 'Task description', 'pending', 'medium', 'John Doe', '2025-05-04 23:25:42'),
+('Property Selling Site', 'yes', 'pending', 'medium', 'Me', '2025-05-04 00:00:00');
